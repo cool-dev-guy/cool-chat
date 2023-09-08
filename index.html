@@ -1,0 +1,109 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/main.css">
+  </head>
+  <body>
+    <main>
+      <section id="chatControls">
+        <button class="active" onclick="openTab('chatBin')">Create</button>
+        <button onclick="openTab('chatBox')">Chat</button>
+        <button onclick="openTab('settings')">Settings</button>
+      </section>
+      <section id="chatApp">
+        <section id="chatBin" class="tab tabx">
+          <section>
+          <h1>Join Chat Room :</h1>
+          <div>
+            <label for="chatNameInput">Name of chat room link : </label>
+            <input id="chatNameInput" placeholder="Enter chat room link" type="text"/>
+          </div>
+            <input id="submitJoin" value="Join" type="submit"/>
+          </section>
+          <section>
+          <h1>Create Chat Room :</h1>
+          <div>
+            <label for="chatNameInput">Name of chat room : </label>
+            <input id="chatNameInput" placeholder="Enter chat room name" type="text"/>
+          </div>
+          <div>
+            <label for="chatCodeInput">Code of chat room :</label>
+            <input id="chatCodeInput" placeholder="Enter chat code" type="text"/>
+          </div>
+            <input id="submitCreate" value="Create" type="submit"/>
+          </section>
+          <p align="justify">
+            <b>More Info</b><br>
+            For discussions a chat room is created.
+            To create a `chat room` a <i>Moderator</i> is required.The moderator first need a <a href="https://dreamlo.com"><i>dreamlo.com</i></a> link to create a chat room,this is the <i>chat room code</i>.
+            The moderator can create a room by passing the <i>chat room code</i> and <i>chat room name</i>.
+            And the moderator will recieve a <i>link</i>,that he can share with his other members to chat.
+          </p>
+        </section>
+        <section id="settings" class="tab">
+          <h1>Settings</h1>
+          <div id="options">
+            <span>Many options</span>
+          </div>
+          <div id="details">
+            <span>Current chat room : {current chat room}</span><br>
+            <span>Current chat url : {current chat url}</span><br>
+            <span>Local storage : {current chat history}</span>
+          </div>
+        </section>
+        <section id="chatBox" class="tab">
+          <section id="chat">
+            <div class="message-container other">
+              <div class="messagebox green">
+                <span class="messager">Cool and rigid</span>
+                <span class="content">Hellow<span>
+              </div>
+            </div>
+            <div class="message-container user">
+              <div class="messagebox red">
+                <span class="messager">cool guy</span>
+                <span class="content">Hi<span>
+              </div>
+            </div>
+            <div class="message-container user">
+              <div class="messagebox red">
+                <span class="messager">cool guy</span>
+                <span class="content">Hi<span>
+              </div>
+            </div>
+            <div class="message-container user">
+              <div class="messagebox red">
+                <span class="messager">cool guy</span>
+                <span class="content">Hi how are you guys,hope you all are fine,this is just a text test to check the alignment of text.In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is availableIn publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is availableIn publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is availableIn publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is availableIn publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is availableIn publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is availableIn publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is availableIn publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is availableIn publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is availableIn publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is availableIn publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is availableIn publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available<span>
+              </div>
+            </div>
+            <div class="message-container other">
+              <div class="messagebox red">
+                <span class="messager">Cool and rigid</span>
+                <span class="content">Hi how are you guys,hope you all are fine,this is just a text test to check the alignment of text.In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is availableIn publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is availableIn publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is availableIn publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is availableIn publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is availableIn publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is availableIn publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is availableIn publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is availableIn publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is availableIn publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is availableIn publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is availableIn publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available<span>
+              </div>
+            </div><!--ch--->
+          </section>
+          <section id="controls">
+            <input type="text"/><button>></button>
+          </section>
+        </section>
+      </section>
+    </main>
+    <script type="text/javascript">
+        function openTab(tabId) {
+            // Hide all tab contents
+            console.log("hi")
+            const tabContents = document.querySelectorAll('.tab');
+            tabContents.forEach(content => {
+                content.style.display = 'none';
+            });
+
+            // Show the selected tab content
+            document.getElementById(tabId).style.display = 'grid';
+        }
+      
+    </script>
+  </body>
+</html>
