@@ -13,13 +13,13 @@ function makeRequest(url) {
         postMessage(xhr.responseText);
         setTimeout(function () {
           makeRequest(url);
-        }, 500); // Retry after a 500 ms (0.5-second) delay.
+        }, 1000); // Retry after a 500 ms (0.5-second) delay.
       } else {
         // There was an error in the request.
         console.error("Request error:", xhr.status, xhr.statusText);
         setTimeout(function () {
           makeRequest(url); // Retry the request after a delay.
-        }, 1000); // Retry after 1 second.
+        }, 1500); // Retry after 1 second.
       }
     }
   };
