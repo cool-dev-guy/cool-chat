@@ -39,7 +39,7 @@ main #chatApp{
 }
 main #chatControls{
   display:grid;
-  grid-template-columns:1fr 1fr 1fr;
+  grid-template-columns:1fr auto auto;
   grid-gap:5px;
   padding:5px;
   background:#222;
@@ -204,6 +204,7 @@ main h1{
   grid-gap:5px;
   grid-template-columns:1fr auto;
   width:100%;
+  margin: 10px 0px;
 }
 #controls button{
   padding:10px 15px;
@@ -228,4 +229,15 @@ main h1{
   margin-left:10px;
   border: 1px solid #7d156d;
   color:#999;
+}
+#chatUsernameInput{
+  background:#222;
+  border:none;
+  color:#777;
+  display:block;
+  margin:10px 0px;
+}
+.content{
+  max-width:calc(70vw - 10px);
+  overflow-wrap: break-word;
 }
