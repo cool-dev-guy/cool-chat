@@ -1,12 +1,14 @@
 document.setup = false;
 document.loadedIndex = 0;
+const proxy = "https://cool-chat-proxy.vercel.app/proxy";
+const proxy_get = "https://cool-chat-proxy.vercel.app/proxy-get"
 function evaluateChatJoin(){
   _joinUrl = document.getElementById("chatJoinInput").value;
   _Username = document.getElementById("chatUsernameInput").value;
   _publicUrl = document.getElementById("chatJoinInput2").value;
   if (_joinUrl!=null && _Username != null){
     document.chatUsername = _Username;
-    document.chatUrl = _joinUrl;
+    document.chatUri = _joinUrl;
     console.log('[App]Chat Joined as '+_Username)
     openTab('chatBox');
     document.chatInterface = document.getElementById('chat');
@@ -82,7 +84,7 @@ function createWebWorker(url){
   const cross_origin_script_url = "https://cool-dev-guy.github.io/cool-chat/worker/message_fetcher.js";
   const worker_url = getWorkerURL( cross_origin_script_url );
   const worker = new Worker( worker_url );
-  worker.postMessage(url);
+  worker.postMessage(`${proxy_get}/${url}/json-date`);
   worker.onmessage = (evt) => retrieveMessage(evt.data);
   URL.revokeObjectURL( worker_url );
 
@@ -119,7 +121,7 @@ function chatAppCreateMessageBox(user,text){
 function sendMessage(){
   _sendMessage = document.getElementById("MessageBoxInput").value;
   document.getElementById("MessageBoxInput").value = '';
-  if (_sendMessage!='' && document.chatUsername!=null && document.chatUrl!=null){
+  if (_sendMessage!='' && document.chatUsername!=null && document.chatUri!=null){
     _passableMessage = _sendMessage.substring(0, 185);
     console.log(document.chatUsername);
     //chatAppCreateMessageBox(document.chatUsername,_passableMessage);
@@ -129,7 +131,7 @@ function sendMessage(){
 }
 function sendMessageToServer(text) {
   var Mcount = parseInt(getStorage('userMessageCount'), 10);
-  const url = `${document.chatUrl}/add/${document.chatUsername};${Mcount}/0/0/${text}`;
+  const url = `${proxy}/${document.chatUri}/add/${document.chatUsername};${Mcount}/0/0/${text}`;
   sendStorage('userMessageCount',Mcount+1);
   console.log(url);
 
