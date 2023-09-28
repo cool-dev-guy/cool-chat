@@ -1,9 +1,18 @@
-# `Cool`**Chat**
+# `CoolChat`
 A simple (Free But Not Open Source) client side chat app that uses free third party services to work.
-
+## Index
+- [Parts of project](#parts-of-project)
+- [How to use the website](#how-to-use)
+- [License](#license)
 ## Parts of project
 - https://github.com/cool-dev-guy/cool-chat - `cool-chat`
 - `vercel based redirect`
+## How to use:
+- Visit https://dreamlo.com - `do it at your own risk`
+- The copy the `private code` and `public code` and paste it in the first 2 text boxes of the website which can be got from the dreamlo.com by clicking on `create new leader board`.
+- Add a `user name` in the below section.and click join.and now you can chat.
+
+> Note: Follow the 2nd and 3rd steps to login to the chat app(for other users).(only moderator need to go to the dreamlo website to create a chat private code and public code.
 ## License:
 ```readme
 Copyright (C) Goutham(https://github.com/cool-dev-guy/) - All Rights Reserved.
