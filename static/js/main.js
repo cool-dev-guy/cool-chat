@@ -84,7 +84,7 @@ function createWebWorker(url){
   const cross_origin_script_url = "https://cool-dev-guy.github.io/cool-chat/worker/message_fetcher.js";
   const worker_url = getWorkerURL( cross_origin_script_url );
   const worker = new Worker( worker_url );
-  worker.postMessage(`${proxy_get}/${url}/json-date`);
+  worker.postMessage(`${proxy_get}/${url}/json`);
   worker.onmessage = (evt) => retrieveMessage(evt.data);
   URL.revokeObjectURL( worker_url );
 
