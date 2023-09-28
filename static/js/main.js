@@ -66,35 +66,32 @@ function retrieveMessage(data) {
 }
 
 function createWebWorker(url){
-  // if(typeof(Worker) !== "undefined") {
-  //   if(typeof(w) == "undefined") {
-  //     console.log("started Web worker created");
-  //     w = new Worker("https://cool-dev-guy.github.io/cool-chat/worker/message_fetcher.js");
-  //   }
-  //   console.log(w,"started Web worker");
-  //   w.onmessage = function(event) {
-  //     console.log(event.data);
-  //     document.getElementById("options").innerHTML = event.data;
-  //   };
-  // } else {
-  //   document.getElementById("options").innerHTML = "Sorry, your browser does not support Web Workers...";
-  // }
+  if(typeof(Worker) !== "undefined") {
+    if(typeof(w) == "undefined") {
+      console.log("started Web worker ! created");
+      const worker = new Worker("https://cool-dev-guy.github.io/cool-chat/worker/message_fetcher.js");
+    }
+    console.log(w,"started Web worker");
+    worker.postMessage(`${proxy_get}/${url}/json`);
+    worker.onmessage = (evt) => retrieveMessage(evt.data);
+  } else {
+    console.log("Sorry, your browser does not support Web Workers...");
+  }
   
   // custom
-  const cross_origin_script_url = "https://cool-dev-guy.github.io/cool-chat/worker/message_fetcher.js";
-  const worker_url = getWorkerURL( cross_origin_script_url );
-  const worker = new Worker( worker_url );
-  worker.postMessage(`${proxy_get}/${url}/json`);
-  worker.onmessage = (evt) => retrieveMessage(evt.data);
-  URL.revokeObjectURL( worker_url );
+  // const cross_origin_script_url = "https://cool-dev-guy.github.io/cool-chat/worker/message_fetcher.js";
+  // const worker_url = getWorkerURL( cross_origin_script_url );
+  // const worker = new Worker( worker_url );
+
+  // URL.revokeObjectURL( worker_url );
 
   // Returns a blob:// URL which points
   // to a javascript file which will call
   // importScripts with the given URL
-  function getWorkerURL( url ) {
-    const content = `importScripts( "${ url }" );`;
-    return URL.createObjectURL( new Blob( [ content ], { type: "text/javascript" } ) );
-  }
+  // function getWorkerURL( url ) {
+  //   const content = `importScripts( "${ url }" );`;
+  //   return URL.createObjectURL( new Blob( [ content ], { type: "text/javascript" } ) );
+  // }
 }
 function chatAppCreateMessageBox(user,text){
   var outerDiv = document.createElement('div');
