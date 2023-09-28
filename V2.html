@@ -1,0 +1,95 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/main.css">
+    <script type="text/javascript" src="static/js/main.js"></script>
+    <script type="text/javascript" src="encryption/b64.js"></script>
+    <script type="text/javascript" src="encryption/api.js"></script>
+  </head>
+  <body>
+    <main>
+      <section id="chatControls">
+        
+        <button>Cool Chat v0.0.1</button>
+        <!-- <button class="active" onclick="openTab('chatBin')">Create</button> -->
+        <!-- <button onclick="openTab('chatBox')">Chat</button> -->
+        <button class='active' onclick="openApp()">Chat</button>
+        <button class='active' onclick="openTab('settings')">Settings</button>
+      </section>
+      <section id="chatApp">
+        <section id="chatBin" class="tab tabx">
+          <section>
+          <h1>Join Chat Room :</h1>
+          <div>
+            <label for="chatJoinInput">Room link: </label>
+            <input id="chatJoinInput" placeholder="Enter chat room link" type="text"/>
+          </div>
+          <div>
+            <label for="chatJoinInput2">Room link(recv): </label>
+            <input id="chatJoinInput2" placeholder="Enter chat room link" type="text"/>
+          </div>
+            <input id="chatUsernameInput" placeholder="Enter Username" type="text"/>
+            <input id="submitJoin" value="Join" type="submit" onclick="evaluateChatJoin()"/>
+          </section>
+          <section>
+          <h1>Create Chat Room :</h1>
+          <div>
+            <label for="chatNameInput">Name of chat room : </label>
+            <input id="chatNameInput" placeholder="Enter chat room name" type="text"/>
+          </div>
+          <div>
+            <label for="chatCodeInput">Code of chat room :</label>
+            <input id="chatCodeInput" placeholder="Enter chat code" type="text"/>
+          </div>
+            <input id="submitCreate" value="Create" type="submit"/>
+          </section>
+          <p align="justify">
+            <b>More Info</b><br>
+            For discussions a chat room is created.
+            To create a `chat room` a <i>Moderator</i> is required.The moderator first need a <a href="https://dreamlo.com"><i>dreamlo.com</i></a> link to create a chat room,this is the <i>chat room code</i>.
+            The moderator can create a room by passing the <i>chat room code</i> and <i>chat room name</i>.
+            And the moderator will recieve a <i>link</i>,that he can share with his other members to chat.
+          </p>
+        </section>
+        <section id="settings" class="tab">
+          <h1>Settings</h1>
+          <div id="options">
+            <span>Many options</span>
+          </div>
+          <div id="details">
+            <span>Current chat room : {current chat room}</span><br>
+            <span>Current chat url : {current chat url}</span><br>
+            <span>Local storage : {current chat history}</span>
+          </div>
+        </section>
+        <section id="chatBox" class="tab">
+          <section id="chat">
+            <div class="message-container other">
+              <div class="messagebox green">
+                <span class="messager">Notice</span>
+                <span class="content">Hellow user,<br>This is a simple chat application devoloped by cool-dev-guy using many free third-party applications,so use this chat app at your own risk and the message you send aren't currently encrypted,and cool-dev-guy is not responsible for any issue caused by it.<br><b>NOTE: </b>You can only send 185 characters in a message.</span>
+              </div>
+            </div>
+          </section>
+          <section id="controls">
+            <input id="MessageBoxInput" type="text"/><button onclick="sendMessage()">></button>
+          </section>
+        </section>
+      </section>
+    </main>
+    <script type="text/javascript">
+        function openTab(tabId) {
+            // Hide all tab contents
+            const tabContents = document.querySelectorAll('.tab');
+            tabContents.forEach(content => {
+                content.style.display = 'none';
+            });
+
+            // Show the selected tab content
+            document.getElementById(tabId).style.display = 'grid';
+        }
+      
+    </script>
+  </body>
+</html>
