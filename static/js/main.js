@@ -66,12 +66,13 @@ function retrieveMessage(data) {
 }
 
 function createWebWorker(url){
+  var worker;
   if(typeof(Worker) !== "undefined") {
-    if(typeof(w) == "undefined") {
-      console.log("started Web worker ! created");
-      const worker = new Worker("worker/message_fetcher.js");
+    if(typeof(worker) == "undefined") {
+      console.log("starting Web worker!");
+      worker = new Worker("worker/message_fetcher.js");
     }
-    console.log(w,"started Web worker");
+    console.log(worker,"started Web worker");
     worker.postMessage(`${proxy_get}/${url}/json`);
     worker.onmessage = (evt) => retrieveMessage(evt.data);
   } else {
