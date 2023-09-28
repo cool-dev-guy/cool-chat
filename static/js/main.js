@@ -69,7 +69,7 @@ function createWebWorker(url){
   if(typeof(Worker) !== "undefined") {
     if(typeof(w) == "undefined") {
       console.log("started Web worker ! created");
-      const worker = new Worker("https://cool-dev-guy.github.io/cool-chat/worker/message_fetcher.js");
+      const worker = new Worker("worker/message_fetcher.js");
     }
     console.log(w,"started Web worker");
     worker.postMessage(`${proxy_get}/${url}/json`);
