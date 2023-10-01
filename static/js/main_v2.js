@@ -120,7 +120,7 @@ function sendMessage(){
   _sendMessage = document.getElementById("MessageBoxInput").value;
   document.getElementById("MessageBoxInput").value = '';
   if (_sendMessage!='' && document.chatUsername!=null && document.chatUri!=null){
-    _passableMessage = _sendMessage.substring(0, 185);
+    _passableMessage = _sendMessage;
     console.log(document.chatUsername);
     //chatAppCreateMessageBox(document.chatUsername,_passableMessage);
     document.chatInterface.scrollTop = document.chatInterface.scrollHeight;
@@ -129,7 +129,7 @@ function sendMessage(){
 }
 async function sendMessageToServer(text) {
   var Mcount = parseInt(getStorage('userMessageCount'), 10);
-  var message = await createMessageObject(text)
+  var message = await createMessageObject(text);
   const url = `${proxy}/${document.chatUri}/add/${document.chatUsername};${Mcount}/0/0/${message}`;
   sendStorage('userMessageCount',Mcount+1);
   console.log(url);
