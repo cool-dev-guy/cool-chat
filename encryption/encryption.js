@@ -142,7 +142,7 @@ async function createMessageObject(message) {
     const _Encrypted_msg = await encryptMessage('default', `https://cool-dev-guy.github.io/link-encrypted-text/?text=${message}`);
     // console.log(_Encrypted_msg)
     const code = await createMessageURI(_Encrypted_msg);
-    console.log('Code:', code);
+    return code;
   } catch (error) {
     console.error('Error:', error);
   }
