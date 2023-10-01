@@ -1,3 +1,4 @@
+//V2
 document.setup = false;
 document.loadedIndex = 0;
 const proxy = "https://cool-chat-proxy.vercel.app/proxy";
