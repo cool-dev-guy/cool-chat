@@ -151,8 +151,8 @@ async function readMessageObject(code) {
   try {
     const _Encrypted_msg = await fetchMessageURI(code);
     const _msg = await decryptMessage(_Encrypted_msg);
-    console.log(_msg);
-    console.log('Message:',new URL(_msg).searchParams.get('text'));
+    //console.log(_msg);
+    return new URL(_msg).searchParams.get('text');
   } catch (error) {
     console.error('Error:', error);
   }
