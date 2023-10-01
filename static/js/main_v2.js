@@ -56,7 +56,7 @@ async function retrieveMessage(data) {
       for (var i = 0; i < messages.length; i++) {
         var entry = messages[i];
         var _temp_name = entry.name.split(';');
-        if (i > document.loadedIndex) {
+        if (i >= document.loadedIndex) {
           chatAppCreateMessageBox(_temp_name[0], await readMessageObject(entry.text));
           document.loadedIndex = i;
         }
@@ -120,7 +120,7 @@ function sendMessage(){
   _sendMessage = document.getElementById("MessageBoxInput").value;
   document.getElementById("MessageBoxInput").value = '';
   if (_sendMessage!='' && document.chatUsername!=null && document.chatUri!=null){
-    _passableMessage = _sendMessage;
+    _passableMessage = _sendMessage.substring(0, 18000);
     console.log(document.chatUsername);
     //chatAppCreateMessageBox(document.chatUsername,_passableMessage);
     document.chatInterface.scrollTop = document.chatInterface.scrollHeight;
