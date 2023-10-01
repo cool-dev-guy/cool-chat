@@ -1,5 +1,5 @@
 document.setup = false;
-document.loadedIndex = 0;
+document.loadedIndex = -1;
 const proxy = "https://cool-chat-proxy.vercel.app/proxy";
 const proxy_get = "https://cool-chat-proxy.vercel.app/proxy-get"
 function evaluateChatJoin(){
@@ -56,7 +56,7 @@ async function retrieveMessage(data) {
       for (var i = 0; i < messages.length; i++) {
         var entry = messages[i];
         var _temp_name = entry.name.split(';');
-        if (i >= document.loadedIndex) {
+        if (i > document.loadedIndex) {
           chatAppCreateMessageBox(_temp_name[0], await readMessageObject(entry.text));
           document.loadedIndex = i;
         }
