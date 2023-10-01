@@ -127,9 +127,10 @@ function sendMessage(){
     sendMessageToServer(_passableMessage)
   }
 }
-function sendMessageToServer(text) {
+async function sendMessageToServer(text) {
   var Mcount = parseInt(getStorage('userMessageCount'), 10);
-  const url = `${proxy}/${document.chatUri}/add/${document.chatUsername};${Mcount}/0/0/${text}`;
+  var message = await createMessageObject(text)
+  const url = `${proxy}/${document.chatUri}/add/${document.chatUsername};${Mcount}/0/0/${message}`;
   sendStorage('userMessageCount',Mcount+1);
   console.log(url);
 
