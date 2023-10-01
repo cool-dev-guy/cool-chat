@@ -1,4 +1,3 @@
-//V2
 document.setup = false;
 document.loadedIndex = 0;
 const proxy = "https://cool-chat-proxy.vercel.app/proxy";
@@ -44,7 +43,7 @@ function getStorage(variable){
     return null;
   }
 }
-function retrieveMessage(data) {
+async function retrieveMessage(data) {
   if (document.chatString != data) {
     console.log(data);
     document.chatString = data;
@@ -58,7 +57,7 @@ function retrieveMessage(data) {
         var entry = messages[i];
         var _temp_name = entry.name.split(';');
         if (i > document.loadedIndex) {
-          chatAppCreateMessageBox(_temp_name[0], entry.text);
+          chatAppCreateMessageBox(_temp_name[0], await readMessageObject(entry.text));
           document.loadedIndex = i;
         }
       }
