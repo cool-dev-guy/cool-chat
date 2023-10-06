@@ -1,3 +1,8 @@
+![header](https://github.com/cool-dev-guy/cool-chat/assets/116984615/cb632ae5-81c5-4db2-9755-6a80b69fdf11)
+
+
+`stage:beta`
+
 # `CoolChat`
 A simple (Free But Not Open Source) client side chat app that uses free third party services to work.
 ## Index
